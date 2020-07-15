@@ -27,8 +27,6 @@ if [[ $1 == kur || $1 == KUR ]];then
 		sleep 2
 		exit
 	fi
-else
-	exit
 fi
 #################### GÜNCELLEME TARİHİ EKLEME ###################
 #
