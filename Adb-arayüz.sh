@@ -10,13 +10,13 @@ if [[ $1 == güncelle || $1 == güncelleme ]];then
 	echo
 	echo
 	echo
-	history -s $(sed -n 35p README.md |tr -d "Güncelleme")
+	history -s $(sed -n 3p README.md |tr -d "Güncelleme")
 	read -e -p $'\e[32mTARİH GİRİNİZ \e[31m>\e[0m ' tarih
 	echo
 	echo
-	songuncelleme=$(sed -n 35p README.md |tr -d "Güncelleme ")
+	songuncelleme=$(sed -n 3p README.md |tr -d "Güncelleme ")
 	sed -ie "s/$songuncelleme/$tarih/g" Adb-arayüz.sh
-	songuncelleme2=$(sed -n 35p README.md |tr -d "Güncelleme ")
+	songuncelleme2=$(sed -n 3p README.md |tr -d "Güncelleme ")
 	sed -ie "s/$songuncelleme2/$tarih/g" README.md
 	echo
 	echo
@@ -35,8 +35,8 @@ if [[ $1 == güncelle || $1 == güncelleme ]];then
 fi
 #################### OTOMATİK GÜNCEKLEME ####################
 
-guncelleme=$(curl -s "https://github.com/termux-egitim/adb-arayuz" |grep -o 15.09.2020)
-readme=$(sed -n 35p README.md |tr -d "Güncelleme ")
+guncelleme=$(curl -s "https://github.com/termux-egitim/ADB-ARAYUZ" |grep -o 15.09.2020)
+readme=$(sed -n 3p README.md |tr -d "Güncelleme ")
 if [ "$guncelleme" = "$readme" ];then
 	echo
 else
