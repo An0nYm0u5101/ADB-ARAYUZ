@@ -1,5 +1,33 @@
 #/bin/bash
 clear
+
+################### KUR ###################
+
+if [[ $1 == kur || $1 == KUR ]];then
+	if [[ -a /data/data/com.termux/files/usr/bin/adb ]];then
+		echo
+	else
+		echo
+		echo
+		echo
+		printf "\e[32m[*]\e[0m ADB KURULUMU YAPILIYOR"
+		echo
+		echo
+		echo
+		sleep 2
+		apt update > /dev/null 2>&1 && apt --assume-yes install wget > /dev/null 2>&1 && wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh -q && bash InstallTools.sh
+		rm -rf adbfiles
+		echo
+		echo
+		echo
+		printf "\e[32m[✓]\e[0m ADB KURULUMU TAMAMLANDI"
+		echo
+		echo
+		echo
+		sleep 2
+		exit
+	fi
+fi
 #################### GÜNCELLEME TARİHİ EKLEME ###################
 #
 if [[ $1 == güncelle || $1 == güncelleme ]];then
