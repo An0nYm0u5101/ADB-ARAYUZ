@@ -63,7 +63,7 @@ if [[ $1 == güncelle || $1 == güncelleme ]];then
 fi
 #################### OTOMATİK GÜNCEKLEME ####################
 
-guncelleme=$(curl -s "https://github.com/termux-egitim/ADB-ARAYUZ" |grep -o 10.08.2020)
+guncelleme=$(curl -s "https://github.com/termux-egitim/ADB-ARAYUZ" |grep -o 15.09.2020)
 readme=$(sed -n 3p README.md |tr -d "Güncelleme ")
 if [ "$guncelleme" = "$readme" ];then
 	echo
