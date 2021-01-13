@@ -1,32 +1,17 @@
 #/bin/bash
 clear
+kontrol=$(which adb |wc -l)
+if [[ $kontrol == 0 ]];then
+	echo
+	echo
+	echo
+	printf "\e[32m[*]\e[0m ADB KURULUMU YAPILIYOR"
+	echo
+	echo
+	echo
+	mv files/adb $PREFIX/bin/
+	chmod 777 $PREFIX/bin/adb
 
-################### KUR ###################
-
-if [[ $1 == kur || $1 == KUR ]];then
-	if [[ -a /data/data/com.termux/files/usr/bin/adb ]];then
-		echo
-	else
-		echo
-		echo
-		echo
-		printf "\e[32m[*]\e[0m ADB KURULUMU YAPILIYOR"
-		echo
-		echo
-		echo
-		sleep 2
-		apt update > /dev/null 2>&1 && apt --assume-yes install wget > /dev/null 2>&1 && wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh -q && bash InstallTools.sh
-		rm -rf adbfiles
-		echo
-		echo
-		echo
-		printf "\e[32m[✓]\e[0m ADB KURULUMU TAMAMLANDI"
-		echo
-		echo
-		echo
-		sleep 2
-		exit
-	fi
 fi
 #################### GÜNCELLEME TARİHİ EKLEME ###################
 #
@@ -133,7 +118,7 @@ printf "\e[0m
 
 [7] \e[32mDOSYA GÖNDER\e[0m
 
-[\e[31mX\e[0m] \e[31mÇIKIŞ\e[0m
+\e[31m[X] \e[97mÇIKIŞ\e[0m
 
 
 "
