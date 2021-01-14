@@ -1,3 +1,3 @@
 adb-arayuz
 
-Güncelleme 10.08.2020
+Güncelleme 14.01.2021
