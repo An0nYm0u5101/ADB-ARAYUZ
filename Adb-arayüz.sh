@@ -9,7 +9,7 @@ if [[ $kontrol == 0 ]];then
 	echo
 	echo
 	echo
-	mv files/adb $PREFIX/bin/
+	cp files/adb $PREFIX/bin/
 	chmod 777 $PREFIX/bin/adb
 
 fi
