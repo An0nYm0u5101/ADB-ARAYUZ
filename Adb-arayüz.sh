@@ -37,7 +37,7 @@ if [[ $1 == güncelle || $1 == güncelleme ]];then
 	printf "\e[32m[*]\e[0m TARİH GÜNCELLENDİ "
 	echo
 	echo
-	if [[ -a Adbarayüz.she ]];then
+	if [[ -a Adb-arayüz.she ]];then
 		rm Adb-arayüz.she
 	fi
 	if [[ -a README.mde ]];then
