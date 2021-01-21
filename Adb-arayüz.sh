@@ -1,5 +1,9 @@
-#/bin/bash
-clear
+#!/bin/bash
+if [[ $1 == güncelle ]];then
+	cd files
+	bash güncelleme.sh güncelle
+	exit
+fi
 kontrol=$(which adb |wc -l)
 if [[ $kontrol == 0 ]];then
 	echo
@@ -13,68 +17,10 @@ if [[ $kontrol == 0 ]];then
 	chmod 777 $PREFIX/bin/adb
 
 fi
-#################### GÜNCELLEME TARİHİ EKLEME ###################
-#
-if [[ $1 == güncelle || $1 == güncelleme ]];then
-	echo
-	echo
-	echo
-	printf "\e[33mSON GÜNCELLEME TARİHİ \e[31m>\e[0m $(sed -n 3p README.md |tr -d \"Güncelleme\")"
-	echo
-	echo
-	echo
-	history -s $(date +%d.%m.%G)
-	read -e -p $'\e[32mTARİH GİRİNİZ \e[31m>\e[0m ' tarih
-	echo
-	echo
-	songuncelleme=$(sed -n 3p README.md |tr -d "Güncelleme ")
-	sed -ie "s/$songuncelleme/$tarih/g" Adb-arayüz.sh
-	songuncelleme2=$(sed -n 3p README.md |tr -d "Güncelleme ")
-	sed -ie "s/$songuncelleme2/$tarih/g" README.md
-	echo
-	echo
-	echo
-	printf "\e[32m[*]\e[0m TARİH GÜNCELLENDİ "
-	echo
-	echo
-	if [[ -a Adb-arayüz.she ]];then
-		rm Adb-arayüz.she
-	fi
-	if [[ -a README.mde ]];then
-		rm README.mde
-	fi
-	exit
-
-fi
-#################### OTOMATİK GÜNCEKLEME ####################
-
-guncelleme=$(curl -s "https://github.com/termux-egitim/ADB-ARAYUZ" |grep -o 14.01.2021)
-readme=$(sed -n 3p README.md |tr -d "Güncelleme ")
-if [ "$guncelleme" = "$readme" ];then
-	echo
-else
-	echo
-	echo
-	echo
-	printf "\e[32m[*]\e[0m ADB ARAYÜZ GÜNCELLENİYOR "
-	echo
-	echo
-	echo
-	sleep 2
-	rm -rf *
-	rm -rf .git
-	git clone https://github.com/termux-egitim/adb-arayuz
-	cd adb-arayuz
-	mv * ../
-	mv .git ../
-	cd ..
-	rm -rf adb-arayuz
-	bash Adb-arayüz.sh
-fi
 #################### MENÜ ####################
-
-clear
-cd files && bash banner.sh
+cd files
+bash güncelleme.sh
+bash banner.sh
 menu() {
 echo
 printf "\e[97m

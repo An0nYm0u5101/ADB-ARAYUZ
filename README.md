@@ -1,3 +1,3 @@
-adb-arayuz
+Adb-arayüz
 
-Güncelleme 14.01.2021
+Güncelleme 21.01.2021
