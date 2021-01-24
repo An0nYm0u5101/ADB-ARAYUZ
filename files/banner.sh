@@ -56,11 +56,11 @@ $renk2
   \e[97m+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ >>\e[0m
                                                   
 
-  \e[97m██████████ \e[33m[\e[32m GİTHUB \e[33m>>\e[32m https://github.com/termux-egitim \e[33m]
+  \e[97m██████████ \e[33m[\e[32m GİTHUB \e[33m>>\e[32m https://github.com/termuxxtoolss \e[33m]
 
-  \e[97m███████████████ \e[33m[\e[32m TELEGRAM \e[33m>>\e[32m https://t.me/termuxegitimm \e[33m]
+  \e[97m███████████████ \e[33m[\e[32m TELEGRAM \e[33m>>\e[32m https://t.me/termuxxtoolss \e[33m]
 
-  \e[97m████████████████████ \e[33m[\e[32m İNSTAGRAM \e[33m>>\e[32m https://www.instagram.com/termuxegitim \e[33m]
+  \e[97m████████████████████ \e[33m[\e[32m İNSTAGRAM \e[33m>>\e[32m https://www.instagram.com/termuxxtoolss \e[33m]
 
   \e[97m█████████████████████████ \e[33m[\e[32m YOUTUBE \e[33m>>\e[32m https://youtube.com/channel/UCE3QvczZXklHSAaRFwDLP5g \e[33m]\e[0m
 
