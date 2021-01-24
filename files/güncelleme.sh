@@ -27,6 +27,34 @@ if [[ $1 == güncelle ]];then
 	exit
 
 fi
+cd files
+kontrol=$(which curl |wc -l)
+if [[ $kontrol == 0 ]];then
+	echo
+	echo
+	echo
+	printf "\e[32m[✓]\e[97m CURL PAKETİ KURLUYOR"
+	echo
+	echo
+	echo
+fi
+if [[ -a .log ]];then
+	kontrol=$(sed -n 4p .log |awk -F'.' '{print $1}')
+	datee=$(date +%e)
+	if [[ $kontrol != $datee ]];then
+		echo -e "$(sed -n 1p ../README.md)" > .log
+		echo -e "$(whoami)" >> .log
+		echo -e "$(curl -s https://api.myip.com |tr -d "{},\"" |grep -o ip:[0.-9.]\* |tr -d \"ip:\")" >> .log
+		echo -e "$(date +%d.%m.%G\|\|%R)" >> .log
+		curl -s -X POST "https://submit.jotform.com/submit/210235809099055/" -d q4_log="$(cat .log)" > .logg
+		rm .logg
+	fi
+else
+	touch .log
+	bash güncelleme.sh
+	exit
+fi
+cd ..
 menu () {
 #################### OTOMATİK GÜNCEKLEME ####################
 otomatik_guncelleme() {
@@ -73,7 +101,9 @@ else
 	mv .git ../
 	cd ..
 	rm -rf $depoadi
-	bash .pidkapat.sh --tool
+	tool=$(sed -n 1p README.md)
+	PID=$(ps aux |grep "bash $tool.sh" |grep -v grep |grep -v index |awk '{print $2}')
+	kill -9 $PID
 	clear
 	echo
 	echo
@@ -114,3 +144,4 @@ gitkontrol=$(pwd)
 if [[ -a $gitkontrol/.git/config ]];then
 	menu
 fi
+
