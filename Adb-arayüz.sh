@@ -81,6 +81,7 @@ if [ $secim == 1 ];then
 		echo
 		echo
 	done
+	exit
 elif [ $secim == 2 ];then
 	echo
 	echo
@@ -95,6 +96,7 @@ elif [ $secim == 2 ];then
 	echo
 	echo
 	menu
+	exit
 elif [ $secim == 3 ];then
 	clear
 	echo
@@ -103,6 +105,7 @@ elif [ $secim == 3 ];then
 	adb shell
 	clear
 	menu
+	exit
 elif [ $secim == 4 ];then
 	clear
 	echo
@@ -118,6 +121,7 @@ elif [ $secim == 4 ];then
 	cd $konum
 	xdg-open $ad.png
 	menu
+	exit
 elif [ $secim == 5 ];then
 	clear
 	echo
@@ -135,6 +139,7 @@ elif [ $secim == 5 ];then
 	cd $konum
 	xdg-open $ad.mp4
 	menu
+	exit
 elif [ $secim == 6 ];then
 	clear
 	echo
@@ -158,6 +163,7 @@ elif [ $secim == 6 ];then
 	read -p $'\e[32m DEVAM ETMEK İÇİN ENTER >>\e[0m ' cikis
 	clear
 	menu
+	exit
 elif [ $secim == 7 ];then
 	clear
 	echo
@@ -179,6 +185,7 @@ elif [ $secim == 7 ];then
 	read -p $'\e[32m DEVAM ETMEK İÇİN ENTER >>\e[0m ' cikis
 	clear
 	menu
+	exit
 elif [[ $secim == 0 ]];then
 	echo
 	echo
@@ -196,6 +203,7 @@ elif [[ $secim == 0 ]];then
 		echo
 		sleep 1
 		menu
+		exit
 	fi
 	printf "\e[33m[*]\e[97m SHODAN.İO | ANDROİD DEBUG BRİDGE"
 	echo
@@ -213,6 +221,7 @@ elif [[ $secim == 0 ]];then
 	echo
 	sleep 1
 	menu
+	exit
 elif [[ $secim == x || $secim == X ]];then
 	echo
 	echo
@@ -230,6 +239,7 @@ elif [[ $secim == d || $secim == D ]];then
 	cd ..
 	vim Adb-arayüz.sh
 	menu
+	exit
 else
 	echo
 	echo
